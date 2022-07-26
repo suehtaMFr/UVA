@@ -52,7 +52,7 @@ int main () {
 	{
 		int ta=sizecria(vet[z]);
 		int vai=5-ta;
-		for(int y=0;y<vai;y++)cout << " ";//printf
+		for(int y=0;y<vai;y++)cout << " ";
 		cout << vet[z];
 		string b=perfect(vet[z]);
 		cout << "  " <<b << "\n";
