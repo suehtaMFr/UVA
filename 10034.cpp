@@ -1,13 +1,10 @@
 #include <iostream>
 #include <algorithm>
-#include <iomanip>
 #include <vector>
-#include <cmath>
-#include <map>
 
 using namespace std;
 
-typedef pair<double,double> ii;
+typedef pair<double,double> dd;
 
 #define f first
 #define s second
@@ -16,16 +13,16 @@ typedef pair<double,double> ii;
 struct aresta{
 	
 	double p;
-	ii u,v;
+	dd u,v;
 	bool operator<(aresta const& b){
 		return p<b.p;
 	}
 };
 
-map<ii,ii> pai;
-map<ii,int> rannk;
+map<dd,dd> pai;
+map<dd,int> rannk;
 vector<aresta> lis;
-vector<ii> en;
+vector<dd> en;
 
 void inic(){
 	
@@ -35,18 +32,18 @@ void inic(){
 	}
 }
 
-ii findSet(ii p){
+dd findSet(dd p){
 	
 	if(pai[p]==p) return p;
 	return pai[p]=findSet(pai[p]);
 }
 
-bool isSameSet(ii u,ii v){
+bool isSameSet(dd u,dd v){
 	
 	return findSet(u)==findSet(v);
 }
 
-void unionSet(ii u,ii v){
+void unionSet(dd u,dd v){
 	
 	if(isSameSet(u,v)) return;
 	u=findSet(u),v=findSet(v);
@@ -61,49 +58,34 @@ void unionSet(ii u,ii v){
 }
 
 int main (){
+	ios_base::sync_with_stdio(false);cin.tie(NULL);
 	
-	int ct;
-	cin >> ct;
-	for(int z=0;z<ct;z++)
+	int v,e;
+	cin >> v >> e;
+	while(v||e)
 	{
-		if(z&&z<ct)
-		{
-			cout <<"\n";
-		}
-		int qd;
-		cin >> qd;
-		for(int i=0;i<qd;i++){
-			double x,y;
-			cin >> x >> y;
-			en.pb({x,y});
-		}
 		aresta aux;
-		for(int i=0;i<qd;i++)
+		int sum=0,u,v1,p;
+		for(int i=0;i<e;i++)
 		{
-			for(int j=i+1;j<qd;j++)
-			{
-				double x1=en[i].f,x2=en[j].f,y1=en[i].s,y2=en[j].s;
-				double d=sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)));
-				aux.p=d,aux.u=en[i],aux.v=en[j];
-				lis.pb(aux);
-			}
+			cin >> u >> v1 >> p;
+			aux.u=u,aux.v=v1,aux.p=p;
+			lis.pb(aux);
+			sum+=p;
 		}
-		inic();
+		inic(v+1);
 		sort(lis.begin(),lis.end());
-		double res=0.0;
-		for(auto ele: lis)
+		int burro=0;
+		for(auto i: lis)
 		{
-			if(findSet(ele.u)!=findSet(ele.v))
+			if(findSet(i.u)!=findSet(i.v))
 			{
-				res+=ele.p;
-				unionSet(ele.u,ele.v);
+				burro+=i.p;
+				unionSet(i.u,i.v);
 			}
 		}
-		cout << fixed << setprecision(2);
-		cout << res <<"\n";
-		en.clear();
+		cout << sum-burro << "\n";
 		lis.clear();
-		pai.clear();
-		rannk.clear();
+		cin >> v >> e;
 	}
 }
