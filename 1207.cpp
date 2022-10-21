@@ -11,7 +11,7 @@ int f(int i,int j){
 	if(i==(int)a.size()) return b.size()-j;
 	if(j==(int)b.size()) return a.size()-i;
 	
-	if(a[i]==b[j]) return f(i+1,j+1);
+	if(a[i]==b[j]) return dp[i][j] = f(i+1,j+1);
 	
 	if(dp[i][j]!=-1) return dp[i][j];
 		
@@ -19,8 +19,8 @@ int f(int i,int j){
 } 
 int main () {
 	
-	int v1,v2;
-	while(cin >> v1 >> a >> v2 >> b)
+	int v;
+	while(cin >> v >> a >> v >> b)
 	{
 		memset(dp,-1,sizeof(dp));
 		cout << f(0,0) << "\n";
