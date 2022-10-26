@@ -46,7 +46,6 @@ void bfs(int orix,int oriy,int maxX,int maxY){
 			}
 		}
 	}
-	
 }
 
 int main(){
