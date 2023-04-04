@@ -23,9 +23,9 @@ std::mt19937_64 rng64((int) std::chrono::steady_clock::now().time_since_epoch().
 int main () {
 	
 	fast;
-	int n,q,v=1;
+	int n,q,z=1;
 	while(cin >> n >> q && (n || q)){
-		cout << "CASE# "<< v++ << ":\n";
+		cout << "CASE# "<< z++ << ":\n";
 		vector<int> v(n);
 		for(int i=0;i<n;i++)
 			cin >> v[i];
