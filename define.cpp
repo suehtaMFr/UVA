@@ -3,7 +3,6 @@
 using namespace std;
  
 //Regular show
-#define mid ((l+r)>>1)
 #define sz(x) ((int)x.size())
 #define fin freopen ("input.txt","r",stdin);
 #define fout freopen ("output.txt","w",stdout);
