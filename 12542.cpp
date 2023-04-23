@@ -18,12 +18,6 @@ std::mt19937 rng((int) std::chrono ::steady_clock::now().time_since_epoch().coun
 std::mt19937_64 rng64((int) std::chrono::steady_clock::now().time_since_epoch().count());
 //~ long double pi = 3.141592653589793;
 
-bool veri(int i,vector<int> & t) { 
-    if(i<0 || i>=sz(t)-2) return false;
-    return (abs(t[i]-t[i+1])==abs(t[i+1]-t[i+2]));
-}
-
-
 int main () {
 	
 	fast;
