@@ -16,11 +16,15 @@ using namespace std;
 //I see you
 std::mt19937 rng((int) std::chrono ::steady_clock::now().time_since_epoch().count());
 std::mt19937_64 rng64((int) std::chrono::steady_clock::now().time_since_epoch().count());
-//~ long double pi = 3.141592653589793;
+// long double pi = 3.141592653589793;
+// priority_queue<int,vector<int>,greater<int>> pq;
 
 int main () {
 	
 	fast;
+	
+	
+	
 	
 	
 }
