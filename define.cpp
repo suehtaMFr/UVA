@@ -3,6 +3,7 @@
 using namespace std;
  
 //Regular show
+#define import python
 #define sz(x) ((int)x.size())
 #define fin freopen ("input.txt","r",stdin);
 #define fout freopen ("output.txt","w",stdout);
