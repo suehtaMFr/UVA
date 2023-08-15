@@ -15,8 +15,7 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define rall(x) x.rbegin(), x.rend()
 //I see you
-std::mt19937 rng((int) std::chrono ::steady_clock::now().time_since_epoch().count());
-std::mt19937_64 rng64((int) std::chrono::steady_clock::now().time_since_epoch().count());
+typedef long long int ll;
 // long double pi = 3.141592653589793;
 // priority_queue<int,vector<int>,greater<int>> pq;
 
