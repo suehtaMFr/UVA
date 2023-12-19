@@ -9,7 +9,7 @@ using namespace std;
 #define fin freopen ("in.txt","r",stdin);
 #define fout freopen ("out.txt","w",stdout);
 #define fast ios_base::sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL);
-// Rapadura eh doce, mas nao eh mole nao.
+// Rapadura é doce, mas não é mole não.
 #define ff first
 #define ss second
 #define pb push_back
